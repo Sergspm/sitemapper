@@ -322,7 +322,7 @@ export default class Sitemapper {
             } else {
               let fields = {};
               for (const [field, active] of Object.entries(this.fields)) {
-                if (active) {
+                if (active && Array.isArray(site[field])) {
                   fields[field] = site[field][0];
                 }
               }
